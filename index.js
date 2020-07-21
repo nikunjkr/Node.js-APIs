@@ -1,3 +1,5 @@
+require('dotenv').confign
+
 import express from 'express';
 import routes from './src/routes/crmRoutes';
 import mongoose from 'mongoose';
@@ -11,7 +13,7 @@ mongoose.Promise = global.Promise;
 //for now database no database connection
 mongoose.connect('', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true 
 });
 
 // bodyparser setup
