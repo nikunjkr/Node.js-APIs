@@ -1,7 +1,11 @@
 import mongoose from 'mongoose';
 import { ContactSchema } from '../models/crmModel';
+//import skillSchema 
+import {SkillsSchema} from '../models/skills';
 
 const Contact = mongoose.model('Contact', ContactSchema);
+//create a table calles Skills 
+const Skills =mongoose.model('Skills', SkillsSchema);
 
 export const addnewContact = (req, res) => {
     let newContact = new Contact(req.body);

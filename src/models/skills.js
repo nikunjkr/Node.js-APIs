@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 const Schema=mongoose.Schema;
 
 //export interstSchema object of type mongoose.Schema
-export const interestSchema =new Schema({
+export const SkillsSchema =new Schema({
     'Name':{
         type:String,
         required : 'Enter Your Name'

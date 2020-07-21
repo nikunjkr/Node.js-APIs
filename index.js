@@ -4,6 +4,8 @@ import express from 'express';
 import routes from './src/routes/crmRoutes';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+//
+import skillroute from './src/routes/skillsRoutes'
 
 const app = express();
 const PORT = 4000;
@@ -11,7 +13,7 @@ const PORT = 4000;
 // mongoose connection
 mongoose.Promise = global.Promise;
 //for now database no database connection
-mongoose.connect('', {
+mongoose.connect('mongodb+srv://nikunj:deoghar@cluster1.z7ysr.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true 
 });
@@ -21,6 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); 
 
 routes(app);
+// routes(skillroute);
 
 // serving static files
 app.use(express.static('public'));
