@@ -1,19 +1,18 @@
-require('dotenv').confign
-
+const dotenv = require('dotenv').config()
 import express from 'express';
 import routes from './src/routes/crmRoutes';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 //
-import skillroute from './src/routes/skillsRoutes'
+// import skillroute from './src/routes/skillsRoutes'
 
 const app = express();
-const PORT = 4000;
+const PORT = 8000 || process.env.PORT;
 
 // mongoose connection
 mongoose.Promise = global.Promise;
 //for now database no database connection
-mongoose.connect('mongodb+srv://nikunj:deoghar@cluster1.z7ysr.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect('process.env.DBURL', {
     useNewUrlParser: true,
     useUnifiedTopology: true 
 });

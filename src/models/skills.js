@@ -1,6 +1,7 @@
 //import mongoose 
 import mongoose from 'mongoose';
 
+
 //create a Schema 
 const Schema=mongoose.Schema;
 
