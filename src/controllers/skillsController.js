@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 //import skillSchema 
 import {SkillsSchema} from '../models/skills';
-//create a table calles Skills 
+//create a table called Skills 
 const Skills =mongoose.model('Skills', SkillsSchema);
 
 export const addNewSkills = (req, res) => {

@@ -1,15 +1,16 @@
-import {addNewSkills} from '../controllers/skillsController'
+import { addNewSkills } from '../controllers/skillsController'
 
-const skillroute = (app) =>{
+const skillroute = (app) => {
     app.route('/skill')
 
-    .get((res,req, next) =>{
+        .get((res, req) => {
+            console.log("Sending Skills")
 
-        console.log('re')},
-        addNewSkills)
+        }, addNewSkills
+        )
 
 
-    
+
 }
 
 export default skillroute;
