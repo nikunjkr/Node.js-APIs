@@ -9,16 +9,22 @@ const Schema=mongoose.Schema;
 export const SkillsSchema =new Schema({
     'Name':{
         type:String,
-        // required : 'Enter Your Name'
+        required : 'Enter Your Name'
     },
-    'Programing language':{
+    'Programming_language':{
         type : String,
-        // required : 'Enter Your favoite programming language'
+        required : 'Enter Your favoite programming language'
     },
-    'Technical Skills':{
+    'Technical_Skills':{
         type : String,
         
     },
+    'Experience':{
+        type : String,
+        required : 'Enter Experience in years'
+        
+    },
+
     'creater_date': {
         type: Date,
         default : Date.now,
