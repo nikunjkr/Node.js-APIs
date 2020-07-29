@@ -1,7 +1,9 @@
 import mongoose from 'mongoose';
 
+// Create a Class 
 const Schema = mongoose.Schema;
 
+// create a ContactSchema object 
 export const ContactSchema = new Schema({
     firstName: {
         type: String,
