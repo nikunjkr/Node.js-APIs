@@ -36,7 +36,7 @@ app.get('/', (req, res) =>
 );
 
 app.listen(PORT, () => {
-    console.log(process.env.DBURL);
+    
     console.log(`Your server is running on port ${PORT}`)
 }
 );
