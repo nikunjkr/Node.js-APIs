@@ -6,8 +6,8 @@ import bodyParser from 'body-parser';
 //
 import skillroute from './src/routes/skillsRoutes' ;
 
-// const connectionURL ='mongodb://127.0.0.1:27017 ';
-const connectionURL = process.env.DBURL;
+const connectionURL ='mongodb://127.0.0.1:27017 ';
+// const connectionURL = process.env.DBURL;
 const app = express();
 const PORT = process.env.port;
 
@@ -19,7 +19,7 @@ mongoose.connect(connectionURL, {
     useUnifiedTopology: true 
 });
 
-// bodyparser setup
+// bodyparser setup global middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); 
 

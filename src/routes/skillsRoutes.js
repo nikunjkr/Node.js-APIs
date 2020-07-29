@@ -1,15 +1,18 @@
-import { addNewSkills } from '../controllers/skillsController'
+import { addNewSkills, getSkills } from '../controllers/skillsController'
 
+// two middle ware passed in get 
 const skillroute = (app) => {
+
     app.route('/skill')
+        .get( (req,res,next) =>{
+        
+            console.log(`Request from ${req.originalUrl}`)
+            console.log(`Request type ${req.method}`)
+            next()
 
-        .get((res, req) => {
-            console.log("Sending Skills")
-
-        }, addNewSkills
+        },getSkills
         )
-
-
+        .post((addNewSkills))
 
 }
 

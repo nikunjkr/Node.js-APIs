@@ -9,11 +9,11 @@ const Schema=mongoose.Schema;
 export const SkillsSchema =new Schema({
     'Name':{
         type:String,
-        required : 'Enter Your Name'
+        // required : 'Enter Your Name'
     },
     'Programing language':{
         type : String,
-        required : 'Enter Your favoite programming language'
+        // required : 'Enter Your favoite programming language'
     },
     'Technical Skills':{
         type : String,

@@ -1,23 +1,28 @@
 import mongoose from 'mongoose'
 //import skillSchema 
-import {SkillsSchema} from '../models/skills';
+import { SkillsSchema } from '../models/skills';
 //create a table called Skills 
-const Skills =mongoose.model('Skills', SkillsSchema);
+const Skills = mongoose.model('Skills', SkillsSchema);
 
 export const addNewSkills = (req, res) => {
 
-    let skill=new Skills(req.body);
+    let newSkill = new Skills(req.body);
     //save take a callback
-    skill.save(
-        (err, skill) =>{
-            if (err)
-            {
-                res.send(error);
-            }
-            else{
-                res.json(skill);
-            }
-
+    newSkill.save((err, skill) => {
+        if (err) {
+            res.send(err);
         }
-    )
+
+        res.json(skill);
+    })
+    
+}
+export const getSkills = (req, res) => {
+    Skills.find({}, (err, skill) => {
+        if (err) {
+            return console.log(err)
+        }
+        res.json(skill)
+
+    })
 }
