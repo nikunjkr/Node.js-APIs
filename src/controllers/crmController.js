@@ -52,3 +52,17 @@ export const deleteContact = (req, res) => {
         res.json({ message: 'successfuly deleted contact'});
     });
 }
+
+const myContact=new Contact({
+    firstName: "Nikunj  ",
+    lastName: "Kumar  ",
+    email: "CODING@JAVASCRIPT.com",
+    phone:2333442
+})
+//then function call after Promise
+myContact.save().then(()=>{
+    console.log(myContact)
+
+}).catch(err=>{
+    console.log(err);
+})

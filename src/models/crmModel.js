@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import validator from 'validator';
 
 // Create a Class 
 const Schema = mongoose.Schema;
@@ -7,23 +8,40 @@ const Schema = mongoose.Schema;
 export const ContactSchema = new Schema({
     firstName: {
         type: String,
-        required: 'Enter a first name'
+        required: 'Enter a first name',
+        trim:true
     },
     lastName: {
         type: String,
         required: 'Enter a last name'
     },
     email: {
-        type: String
+        type: String,
+        validate(value){
+            if(!validator.isEmail(value))
+            {
+                throw new Error("Invlid EmailID");
+            }
+
+        },
+        required:'Enter Email ID',
+        lowercase: true
+
     },
     company: {
         type: String
     },
     phone: {
-        type: Number
+        type: Number,
+        validator(value){
+            if(!validator.isMobilePhone())
+                throw Error("Invalid Mobile Number")
+        },
+        trim:true
     },
     created_date: {
         type: Date,
         default: Date.now
     }
 });
+
